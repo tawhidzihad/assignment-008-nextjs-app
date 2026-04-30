@@ -2,8 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 const BookCard = ({ topBook }) => {
-	console.log(topBook);
-
 	const { image_url, title, available_quantity } = topBook;
 
 	return (
