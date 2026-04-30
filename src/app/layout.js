@@ -1,3 +1,4 @@
+import Footer from "@/components/shared/Footer/Footer";
 import Navbar from "@/components/shared/Navbar/Navbar";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
@@ -5,13 +6,13 @@ import "./globals.css";
 const inter = Inter({
 	variable: "--inter-font",
 	subsets: ["latin"],
-	weight: ["300", "400", "500", "600", "700", "800", "900"],
+	weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 const poppins = Poppins({
 	variable: "--poppins-font",
 	subsets: ["latin"],
-	weight: ["300", "500", "600", "800"],
+	weight: ["100", "200", "300", "500", "600", "800"],
 });
 
 export const metadata = {
@@ -27,10 +28,9 @@ export default function RootLayout({ children }) {
 			className={`${inter.className} h-full antialiased`}
 		>
 			<body className="min-h-full flex flex-col">
-				<main>
-					<Navbar></Navbar>
-					{children}
-				</main>
+				<Navbar></Navbar>
+				<main>{children}</main>
+				<Footer></Footer>
 			</body>
 		</html>
 	);
