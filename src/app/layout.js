@@ -9,11 +9,11 @@ const inter = Inter({
 	weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
-const poppins = Poppins({
-	variable: "--poppins-font",
-	subsets: ["latin"],
-	weight: ["100", "200", "300", "500", "600", "800"],
-});
+// const poppins = Poppins({
+// 	variable: "--poppins-font",
+// 	subsets: ["latin"],
+// 	weight: ["100", "200", "300", "500", "600", "800"],
+// });
 
 export const metadata = {
 	title: "BookLend - Online Book Borrowing Platform",

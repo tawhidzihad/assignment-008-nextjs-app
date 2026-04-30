@@ -1,4 +1,5 @@
 import Banner from "@/components/HomePageSection/Banner";
+import FeaturedBooksSection from "@/components/HomePageSection/FeaturedBooksSection";
 import MarqueeSection from "@/components/HomePageSection/MarqueeSection";
 
 const HomePage = () => {
@@ -6,6 +7,7 @@ const HomePage = () => {
 		<>
 			<Banner></Banner>
 			<MarqueeSection></MarqueeSection>
+			<FeaturedBooksSection></FeaturedBooksSection>
 		</>
 	);
 };
