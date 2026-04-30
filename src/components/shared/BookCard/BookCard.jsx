@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const BookCard = ({ topBook }) => {
-	const { image_url, title, available_quantity } = topBook;
+const BookCard = ({ book }) => {
+	const { image_url, title, available_quantity } = book;
 
 	return (
 		<div className="card bg-base-100 shadow-md ">
@@ -12,6 +12,7 @@ const BookCard = ({ topBook }) => {
 					alt={title}
 					width={100}
 					height={100}
+					loading="eager"
 					className="h-60 w-auto rounded"
 				/>
 				<span className="badge badge-success text-white badge-sm absolute right-2 top-2">
