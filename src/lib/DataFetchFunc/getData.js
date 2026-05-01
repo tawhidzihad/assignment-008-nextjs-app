@@ -28,3 +28,10 @@ export const getAllBooks = async (category, search) => {
 
 	return booksData;
 };
+
+export const getThisBook = async (id) => {
+	const res = await fetch(
+		`https://booklend-json-server.onrender.com/books/${id}`,
+	);
+	return res.json();
+};

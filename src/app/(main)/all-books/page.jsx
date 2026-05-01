@@ -9,8 +9,10 @@ const AllBooksPage = async ({ searchParams }) => {
 	const categories = await getCategories();
 
 	return (
-		<div className="container mx-auto py-10 space-y-6">
-			<h1 className="text-center text-3xl font-bold">All Books</h1>
+		<div className="container mx-auto py-10 space-y-6 animate__fadeIn animate__delay-0.5s animate__animated">
+			<h1 className="text-center text-3xl font-bold">
+				All Books
+			</h1>
 
 			<div className="flex flex-col-reverse gap-5 md:flex-row items-center justify-between">
 				<FilteringByCategory

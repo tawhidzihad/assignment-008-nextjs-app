@@ -9,7 +9,7 @@ const FeaturedBooksSection = async () => {
 		.slice(0, 4);
 
 	return (
-		<div className="container mx-auto pt-5 pb-10 space-y-5">
+		<div className="container mx-auto pt-10 pb-15 space-y-5 animate__fadeIn animate__delay-0.5s animate__animated">
 			<h2 className="text-center text-2xl font-bold">Top 4 Books</h2>
 			<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 px-3 md:px-0">
 				{topBooks.map((book) => (

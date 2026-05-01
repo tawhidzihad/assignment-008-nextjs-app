@@ -2,7 +2,7 @@ import { FaCheck } from "react-icons/fa";
 
 const MemberShipSection = () => {
 	return (
-		<div className="bg-indigo-100">
+		<div className="bg-indigo-100 py-5 animate__fadeIn animate__delay-0.5s animate__animated">
 			<div className="container mx-auto py-5">
 				<div className="rounded-xl py-5 grid grid-cols-1 px-3 md:px-0 md:grid-cols-2 lg:grid-cols-3 gap-5">
 					<div className="card bg-base-100 shadow-sm">

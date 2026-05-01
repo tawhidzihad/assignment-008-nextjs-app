@@ -1,6 +1,8 @@
 import Footer from "@/components/shared/Footer/Footer";
 import Navbar from "@/components/shared/Navbar/Navbar";
-import { Inter, Poppins } from "next/font/google";
+import "animate.css";
+import { Inter } from "next/font/google";
+import { Slide, ToastContainer } from "react-toastify";
 import "./globals.css";
 
 const inter = Inter({
@@ -8,12 +10,6 @@ const inter = Inter({
 	subsets: ["latin"],
 	weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
-
-// const poppins = Poppins({
-// 	variable: "--poppins-font",
-// 	subsets: ["latin"],
-// 	weight: ["100", "200", "300", "500", "600", "800"],
-// });
 
 export const metadata = {
 	title: "BookLend - Online Book Borrowing Platform",
@@ -28,6 +24,19 @@ export default function RootLayout({ children }) {
 			className={`${inter.className} h-full antialiased`}
 		>
 			<body className="min-h-full flex flex-col">
+				<ToastContainer
+					position="top-center"
+					autoClose={2000}
+					hideProgressBar={false}
+					newestOnTop={false}
+					closeOnClick={false}
+					rtl={false}
+					pauseOnFocusLoss
+					draggable
+					pauseOnHover
+					theme="light"
+					transition={Slide}
+				/>
 				<Navbar></Navbar>
 				<main>{children}</main>
 				<Footer></Footer>

@@ -2,10 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 const BookCard = ({ book }) => {
-	const { image_url, title, available_quantity } = book;
+	const { id, image_url, title, available_quantity } = book;
 
 	return (
-		<div className="card bg-base-100 shadow-md ">
+		<div className="card bg-base-100 shadow-md">
 			<figure className="py-10 bg-zinc-200 hover:bg-base-100 relative">
 				<Image
 					src={image_url}
@@ -23,7 +23,7 @@ const BookCard = ({ book }) => {
 			<div className="py-5 px-3 text-center space-y-6">
 				<h2 className="text-xl font-bold text-slate-700">{title}</h2>
 				<Link
-					href={"/all-books"}
+					href={`/all-books/${id}`}
 					className="btn btn-outline w-full border-none bg-zinc-100 hover:bg-zinc-300 rounded-full"
 				>
 					View Details

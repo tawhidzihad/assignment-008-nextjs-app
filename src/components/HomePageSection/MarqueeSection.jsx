@@ -5,7 +5,7 @@ const MarqueeSection = async () => {
 	const data = await getAnnouncements();
 
 	return (
-		<div className="container mx-auto pb-5">
+		<div className="container mx-auto py-3 animate__fadeIn animate__delay-0.5s animate__animated">
 			<div className="flex px-3 md:px-0">
 				<p className="bg-slate-700 px-3 py-1 text-white rounded-l-md">
 					Updates

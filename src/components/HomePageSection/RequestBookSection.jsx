@@ -1,6 +1,6 @@
 const RequestBookSection = () => {
 	return (
-		<div className="bg-slate-200 py-10">
+		<div className="bg-slate-200 py-10 animate__fadeIn animate__delay-0.5s animate__animated">
 			<div className="container mx-auto flex justify-center items-center">
 				<div className="hero-content flex-col">
 					<div className="text-center space-y-3">

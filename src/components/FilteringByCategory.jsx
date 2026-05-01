@@ -23,7 +23,7 @@ const FilteringByCategory = ({ categories, activeBtn }) => {
 	return (
 		<>
 			<div className="dropdown">
-				<div tabIndex={0} role="button" className="btn m-1">
+				<div tabIndex={0} role="button" className="btn">
 					Filter by {activeCategory || "Category"}
 				</div>
 				<ul
