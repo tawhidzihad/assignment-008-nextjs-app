@@ -23,7 +23,7 @@ const BookCard = ({ book }) => {
 			<div className="py-5 px-3 text-center space-y-6">
 				<h2 className="text-xl font-bold text-slate-700">{title}</h2>
 				<Link
-					href={`/all-books/${id}`}
+					href={`/book/${id}`}
 					className="btn btn-outline w-full border-none bg-zinc-100 hover:bg-zinc-300 rounded-full"
 				>
 					View Details

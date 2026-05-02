@@ -5,8 +5,10 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { FaRegAddressCard } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { GoEye, GoEyeClosed } from "react-icons/go";
+import { IoIosLogIn } from "react-icons/io";
 import { toast } from "react-toastify";
 
 const RegisterPage = () => {
@@ -30,9 +32,26 @@ const RegisterPage = () => {
 		});
 
 		if (data) {
-			toast.success("Registration successful.");
-			await authClient.signOut();
+			toast.success("Registration successful.", {
+				icon: <FaRegAddressCard className="text-xl text-green-500" />,
+			});
 			router.push("/login");
+		}
+
+		if (error) {
+			toast.error(error.message);
+		}
+	};
+
+	const handleGoogleSignIn = async () => {
+		const { data, error } = await authClient.signIn.social({
+			provider: "google",
+		});
+
+		if (data) {
+			toast.success("Login successful.", {
+				icon: <IoIosLogIn className="text-xl text-green-500" />,
+			});
 		}
 
 		if (error) {
@@ -147,7 +166,10 @@ const RegisterPage = () => {
 
 				<div className="divider">Or</div>
 
-				<button className="btn bg-slate-600 text-white rounded-4xl w-full">
+				<button
+					className="btn bg-slate-600 text-white rounded-4xl w-full"
+					onClick={handleGoogleSignIn}
+				>
 					<FcGoogle className="text-xl"></FcGoogle>
 					Login with Google
 				</button>

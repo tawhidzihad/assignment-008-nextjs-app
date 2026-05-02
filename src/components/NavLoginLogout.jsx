@@ -3,6 +3,7 @@
 import { authClient } from "@/lib/auth-client";
 import Image from "next/image";
 import Link from "next/link";
+import { IoIosLogOut } from "react-icons/io";
 import { toast } from "react-toastify";
 
 const NavLoginLogout = () => {
@@ -11,8 +12,10 @@ const NavLoginLogout = () => {
 	const userData = data?.user;
 
 	const handleLogoutBtn = async () => {
+		toast.error("Logout successfully.", {
+			icon: <IoIosLogOut className="text-xl text-red-500" />,
+		});
 		await authClient.signOut();
-		toast.success("Signed out successfully.");
 	};
 
 	return (
@@ -27,9 +30,8 @@ const NavLoginLogout = () => {
 						Hey, {userData.name}
 					</p>
 
-					{/* This is for mobile device only */}
-					<div className=" md:hidden dropdown dropdown-center">
-						<div tabIndex={0} role="button">
+					<div className="block md:hidden">
+						<Link href={"/my-profile"}>
 							<Image
 								src={userData.image}
 								alt={userData.name}
@@ -37,20 +39,18 @@ const NavLoginLogout = () => {
 								height={10}
 								className="h-10 w-10 rounded-full object-cover"
 							></Image>
-						</div>
-						<p className="dropdown-content menu bg-base-100 rounded w-40 z-1 font-medium">
-							Hey, {userData.name}
-						</p>
+						</Link>
 					</div>
 
-					{/* This is for medium to large device */}
-					<Image
-						src={userData.image}
-						alt={userData.name}
-						width={10}
-						height={10}
-						className="h-10 w-10 rounded-full object-cover hidden md:block"
-					></Image>
+					<div className="hidden md:block">
+						<Image
+							src={userData.image}
+							alt={userData.name}
+							width={10}
+							height={10}
+							className="h-10 w-10 rounded-full object-cover"
+						></Image>
+					</div>
 
 					<button className="btn" onClick={handleLogoutBtn}>
 						Logout

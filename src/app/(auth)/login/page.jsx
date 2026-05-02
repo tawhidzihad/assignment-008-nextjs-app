@@ -2,14 +2,17 @@
 
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
 import { GoEye, GoEyeClosed } from "react-icons/go";
+import { IoIosLogIn } from "react-icons/io";
 import { toast } from "react-toastify";
 
 const LogInPage = () => {
 	const [showPassword, setShowPassword] = useState(false);
+	const router = useRouter();
 
 	const {
 		register,
@@ -24,11 +27,29 @@ const LogInPage = () => {
 			email: email,
 			password: password,
 			rememberMe: true,
-			callbackURL: "/",
 		});
 
 		if (data) {
-			toast.success("You’re now logged in.");
+			toast.success("Login successful.", {
+				icon: <IoIosLogIn className="text-xl text-green-500" />,
+			});
+			router.push("/");
+		}
+
+		if (error) {
+			toast.error(error.message);
+		}
+	};
+
+	const handleGoogleSignIn = async () => {
+		const { data, error } = await authClient.signIn.social({
+			provider: "google",
+		});
+
+		if (data) {
+			toast.success("Login successful.", {
+				icon: <IoIosLogIn className="text-xl text-green-500" />,
+			});
 		}
 
 		if (error) {
@@ -105,7 +126,10 @@ const LogInPage = () => {
 
 				<div className="divider">Or</div>
 
-				<button className="btn bg-slate-600 text-white rounded-4xl w-full">
+				<button
+					className="btn bg-slate-600 text-white rounded-4xl w-full"
+					onClick={handleGoogleSignIn}
+				>
 					<FcGoogle className="text-xl"></FcGoogle>
 					Login with Google
 				</button>
