@@ -50,8 +50,9 @@ const Navbar = () => {
 							<Image
 								src={Logo}
 								alt="Booklend Navbar"
-								width={40}
-								height={40}
+								width={50}
+								height={50}
+								loading="eager"
 							></Image>
 						</Link>
 					</div>

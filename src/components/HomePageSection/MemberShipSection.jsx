@@ -3,6 +3,9 @@ import { FaCheck } from "react-icons/fa";
 const MemberShipSection = () => {
 	return (
 		<div className="bg-indigo-100 py-5 animate__fadeIn animate__delay-0.5s animate__animated">
+			<h2 className="text-center text-2xl font-bold pt-7 pb-3 px-3 md:px-0">
+				Flexible Plans for Every Reader
+			</h2>
 			<div className="container mx-auto py-5">
 				<div className="rounded-xl py-5 grid grid-cols-1 px-3 md:px-0 md:grid-cols-2 lg:grid-cols-3 gap-5">
 					<div className="card bg-base-100 shadow-sm">

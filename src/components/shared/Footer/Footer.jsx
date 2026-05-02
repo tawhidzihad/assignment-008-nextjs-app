@@ -1,25 +1,25 @@
 import FooterLogo from "@/images/Booklend-footer-logo.png";
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer = () => {
 	return (
 		<footer className="bg-base-200 pt-10 pb-5 space-y-5 border-t border-slate-300">
-
 			<div className="container mx-auto footer flex flex-col md:flex-row justify-between text-black px-3 md:px-0">
 				<div className="flex justify-center items-center gap-4">
-					<Image
-						src={FooterLogo}
-						alt="Boolend Logo"
-						className="rounded-xs"
-						width={70}
-						height={70}
-					></Image>
+					<Link href={"/"}>
+						<Image
+							src={FooterLogo}
+							alt="Boolend Logo"
+							className="rounded-xs"
+							width={70}
+							height={70}
+							loading="eager"
+						></Image>
+					</Link>
 					<div>
-						<p>
-							Booklend
-							<br />
-							Online Book Borrowing Platform
-						</p>
+						<p className="font-semibold">Booklend</p>
+						<p>Online Book Borrowing Platform</p>
 					</div>
 				</div>
 
@@ -64,7 +64,8 @@ const Footer = () => {
 			</div>
 
 			<p className="text-center text-xs">
-				Copyright © {new Date().getFullYear()} - All right reserved by Booklend
+				Copyright © {new Date().getFullYear()} - All right reserved by
+				Booklend
 			</p>
 		</footer>
 	);
