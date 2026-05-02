@@ -8,7 +8,6 @@ import { useForm } from "react-hook-form";
 import { FaRegAddressCard } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { GoEye, GoEyeClosed } from "react-icons/go";
-import { IoIosLogIn } from "react-icons/io";
 import { toast } from "react-toastify";
 
 const RegisterPage = () => {
@@ -44,19 +43,9 @@ const RegisterPage = () => {
 	};
 
 	const handleGoogleSignIn = async () => {
-		const { data, error } = await authClient.signIn.social({
+		await authClient.signIn.social({
 			provider: "google",
 		});
-
-		if (data) {
-			toast.success("Login successful.", {
-				icon: <IoIosLogIn className="text-xl text-green-500" />,
-			});
-		}
-
-		if (error) {
-			toast.error(error.message);
-		}
 	};
 
 	return (
