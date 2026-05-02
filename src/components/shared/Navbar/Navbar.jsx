@@ -1,4 +1,5 @@
 import NavLink from "@/components/NavLink";
+import NavLoginLogout from "@/components/NavLoginLogout";
 import Logo from "@/images/booklend-logo.png";
 import Image from "next/image";
 import Link from "next/link";
@@ -72,7 +73,7 @@ const Navbar = () => {
 					</div>
 
 					<div className="navbar-end">
-						<Link href={"/login"} className="btn">Login</Link>
+						<NavLoginLogout></NavLoginLogout>
 					</div>
 				</div>
 			</div>

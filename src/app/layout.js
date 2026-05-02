@@ -1,3 +1,6 @@
+import dns from "node:dns";
+dns.setServers(["8.8.8.8", "8.8.4.4"]);
+
 import Footer from "@/components/shared/Footer/Footer";
 import Navbar from "@/components/shared/Navbar/Navbar";
 import "animate.css";
@@ -8,7 +11,6 @@ import "./globals.css";
 const inter = Inter({
 	variable: "--inter-font",
 	subsets: ["latin"],
-	weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata = {
@@ -27,7 +29,7 @@ export default function RootLayout({ children }) {
 			<body className="min-h-full flex flex-col">
 				<ToastContainer
 					position="top-center"
-					autoClose={2000}
+					autoClose={4000}
 					hideProgressBar={false}
 					newestOnTop={false}
 					closeOnClick={false}
