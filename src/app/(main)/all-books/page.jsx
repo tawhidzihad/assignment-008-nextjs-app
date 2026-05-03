@@ -3,6 +3,10 @@ import FilteringByCategory from "@/components/FilteringByCategory";
 import BookCard from "@/components/shared/BookCard/BookCard";
 import { getAllBooks, getCategories } from "@/lib/DataFetchFunc/getData";
 
+export const metadata = {
+	title: "BookLend - Book Collections",
+};
+
 const AllBooksPage = async ({ searchParams }) => {
 	const sp = await searchParams;
 	const books = await getAllBooks(sp.category, sp.search);
@@ -10,9 +14,7 @@ const AllBooksPage = async ({ searchParams }) => {
 
 	return (
 		<div className="container mx-auto py-10 space-y-6 animate__fadeIn animate__delay-0.5s animate__animated">
-			<h1 className="text-center text-3xl font-bold">
-				All Books
-			</h1>
+			<h1 className="text-center text-3xl font-bold">All Books</h1>
 
 			<div className="flex flex-col-reverse gap-5 md:flex-row items-center justify-between">
 				<FilteringByCategory

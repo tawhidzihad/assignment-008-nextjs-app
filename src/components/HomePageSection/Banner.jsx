@@ -13,7 +13,7 @@ const Banner = () => {
 						height={600}
 						loading="eager"
 						alt="Banner Book Image"
-						className="w-auto"
+						className="w-auto animate__zoomIn animate__delay-0.5s animate__animated"
 					></Image>
 
 					<h1 className="text-2xl md:text-4xl text-white [text-shadow:0_8px_9px_rgba(0,0,0,0.400)] animate__zoomIn animate__delay-0.5s animate__animated">

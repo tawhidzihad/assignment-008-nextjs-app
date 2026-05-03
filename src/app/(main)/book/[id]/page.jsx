@@ -2,6 +2,17 @@ import BorrowButton from "@/components/BorrowButton";
 import { getThisBook } from "@/lib/DataFetchFunc/getData";
 import Image from "next/image";
 
+export async function generateMetadata({ params }) {
+	const { id } = await params;
+
+	const book = await getThisBook(id);
+
+	return {
+		title: `Booklend - ${book.title}`,
+		description: book.description,
+	};
+}
+
 const BookDetailsPage = async ({ params }) => {
 	const { id } = await params;
 	const {
