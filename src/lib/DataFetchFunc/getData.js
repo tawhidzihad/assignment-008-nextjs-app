@@ -17,7 +17,7 @@ export const getAllBooks = async (category, search) => {
 	let booksData = await res.json();
 
 	if (category) {
-		booksData = booksData.filter((data) => data.category === category);
+		booksData = booksData.filter((book) => book.category === category);
 	}
 
 	if (search) {
