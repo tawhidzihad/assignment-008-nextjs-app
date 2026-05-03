@@ -20,7 +20,7 @@ const MyProfilePageCompo = () => {
 
 	return (
 		<div className="container mx-auto my-5 py-10 flex justify-center items-center px-3 md:px-0">
-			<div className="card bg-base-100 w-96 shadow-sm p-5">
+			<div className="card bg-base-100 w-96 shadow-sm p-5 animate__fadeIn animate__delay-0.5s animate__animated">
 				{isPending ? (
 					<div className="p-10 flex justify-center items-center">
 						<span className="loading loading-spinner loading-xl"></span>

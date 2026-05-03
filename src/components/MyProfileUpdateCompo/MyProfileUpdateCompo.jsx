@@ -25,12 +25,12 @@ const MyProfileUpdateCompo = () => {
 
 			router.push("/my-profile");
 		} else {
-			toast.warning("Enter Name Or Photo URL");
+			toast.warning("Enter name & photo URL");
 		}
 	};
 
 	return (
-		<div className="container mx-auto my-5 py-10 flex justify-center items-center px-3 md:px-0">
+		<div className="container mx-auto my-5 py-10 flex justify-center items-center px-3 md:px-0 animate__fadeIn animate__delay-0.5s animate__animated">
 			<div className="card bg-base-100 w-96 shadow-sm py-10 px-5 space-y-5">
 				<h1 className="text-center pb-4 text-2xl text-zinc-700 font-bold border-zinc-200 border-b">
 					Update Your Profile

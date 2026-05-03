@@ -49,7 +49,7 @@ const RegisterPageCompo = () => {
 	};
 
 	return (
-		<div className="container mx-auto min-h-screen flex justify-center items-center px-3 md:px-0 py-5">
+		<div className="container mx-auto min-h-screen flex justify-center items-center px-3 md:px-0 py-5 animate__fadeIn animate__delay-0.5s animate__animated">
 			<div className="bg-base-100 border-base-300 rounded-box w-md border space-y-4 px-4">
 				<h1 className="text-center pt-10 pb-4 text-2xl text-zinc-700 font-bold border-zinc-200 border-b">
 					Register Your Account
