@@ -12,7 +12,7 @@ const NavLoginLogout = () => {
 	const userData = data?.user;
 
 	const handleLogoutBtn = async () => {
-		toast.error("Logout successfully.", {
+		toast.error("Logout successful.", {
 			icon: <IoIosLogOut className="text-xl text-red-500" />,
 		});
 		await authClient.signOut();
